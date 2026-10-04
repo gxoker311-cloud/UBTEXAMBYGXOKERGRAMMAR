@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPS-TOPIK Grammar Master</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&family=Poppins:wght@700;900&display=swap');
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 15px;
+            background-color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /* Phone Optimized Zoomable Container */
+        .grammar-container {
+            width: 100%;
+            max-width: 600px;
+            background: #ffffff;
+            border: 4px solid #000000;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            overflow-x: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-inner {
+            min-width: 480px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Header with Logo */
+        .main-header {
+            background: #000000;
+            color: #ffffff;
+            padding: 16px;
+            text-align: center;
+            border-radius: 12px;
+            border: 2px solid #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #facc15;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .main-title {
+            font-size: 18px;
+            font-weight: 900;
+            margin: 0;
+            color: #facc15;
+            letter-spacing: -0.5px;
+        }
+
+        /* Grammar Card */
+        .grammar-card {
+            border: 3px solid #000000;
+            border-radius: 14px;
+            padding: 16px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 900;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 8px;
+        }
+
+        /* Highlights */
+        .hl-yellow {
+            background-color: #facc15;
+            color: #000000;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 900;
+        }
+
+        .hl-blue {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 900;
+        }
+
+        .hl-red {
+            background-color: #dc2626;
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 900;
+        }
+
+        .desc-text {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+
+        .sub-heading {
+            font-size: 14.5px;
+            font-weight: 900;
+            color: #1e3a8a;
+            background: #eff6ff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .example-box {
+            background: #f8fafc;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .ko-text {
+            font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+            font-size: 14.5px;
+            font-weight: 900;
+            color: #0f172a;
+        }
+
+        .my-text {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        /* Comparison Table */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .compare-table th, .compare-table td {
+            border: 2px solid #000000;
+            padding: 8px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .compare-table th {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .compare-table td {
+            background-color: #ffffff;
+            color: #0f172a;
+        }
+
+        /* Footer with Logo */
+        .card-footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 16px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 3px solid #000000;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .footer-logo {
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #facc15;
+        }
+
+        .brand-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 900;
+            color: #facc15;
+            letter-spacing: 1.5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grammar-container">
+    <div class="content-inner">
+        <!-- Header with Logo Image -->
+        <div class="main-header">
+            <img src="https://i.imgur.com/WA5hd3D.jpeg" alt="Gxoker Logo" class="logo-img">
+            <h1 class="main-title">🍁 EPS-TOPIK GRAMMAR MASTER 🍁</h1>
+        </div>
+
+        <!-- Intro Summary Card -->
+        <div class="grammar-card" style="background: #fffbeb;">
+            <div class="desc-text" style="font-size: 15px;">
+                -다가 နဲ့ -았/었다가 သဒ္ဒါနှစ်ခုလုံးက လုပ်ဆောင်ချက်တွေ လမ်းကြောင်းပြောင်းသွားတာကို ပြတာချင်း တူပေမဲ့၊ အဓိကကွာခြားချက်က <span class="hl-yellow">"ရှေ့ကအလုပ် မပြီးသေးဘဲ ကြားဖြတ်ရပ်သွားလား"</span> ဒါမှမဟုတ် <span class="hl-red">"ရှေ့အလုပ် လုံးဝပြီးစီးသွားပြီးမှ ဆန့်ကျင်ဘက်ကို ပြောင်းပြန်လှန်လိုက်လား"</span> ဆိုတဲ့ အချက်ပဲ။
+            </div>
+        </div>
+
+        <!-- 1. V-다가 -->
+        <div class="grammar-card">
+            <div class="card-title">
+                <span class="hl-blue">🍁 ၁။ V-다가</span> (လုပ်လက်စတန်းလန်း ကြားဖြတ်ပြောင်းလဲတာ)
+            </div>
+            
+            <div class="desc-text">
+                > <strong>အဓိပ္ပာယ်:</strong> ဒီကောင်က ရှေ့မှာ အလုပ်တစ်ခုခုကို လုပ်နေဆဲတန်းလန်း၊ မပြီးသေးဘဲနဲ့ ရုတ်တရက် ရပ်တန့်လိုက်ရတာ (သို့) အခြားအလုပ်တစ်ခုဘက်ကို လမ်းကြောင်းပြောင်းသွားတာကို ပြောချင်တဲ့အခါ သုံးတယ်။
+            </div>
+            
+            <div class="desc-text" style="color: #2563eb;">
+                > <strong>မြန်မာလို အလွယ်မှတ်ရင်:</strong> "~နေတုန်း/~နေရင်းတန်းလန်းမှာ"
+            </div>
+
+            <div class="sub-heading">✨ ပေါင်းစပ်ပုံ:</div>
+            <div class="desc-text">
+                * အသတ်ရှိရှိ၊ မရှိရှိ ကြိယာရင်းနောက်မှာ <span class="hl-blue">-다가</span> ကို တိုက်ရိုက်ကပ်။<br>
+                &nbsp;&nbsp;• 자다 → <span class="hl-blue">자다가</span> (အိပ်နေတုန်း)<br>
+                &nbsp;&nbsp;• 일하다 → <span class="hl-blue">일하다가</span> (အလုပ်လုပ်နေတုန်း)<br>
+                &nbsp;&nbsp;• 프레스 기계를 작동시키다 → <span class="hl-blue">작동시키다가</span> (စက်မောင်းနေတုန်းတန်းလန်း)
+            </div>
+
+            <div class="sub-heading">📌 မဖြစ်မနေ သိရမယ့် အချက်က:</div>
+            <div class="desc-text">
+                * <strong>Subject တူရမယ်-</strong> ရှေ့အလုပ်လုပ်နေတဲ့သူနဲ့ ကြားဖြတ်ပြောင်းလဲသွားတဲ့သူဟာ တစ်ယောက်တည်း ဖြစ်ရမယ်။<br>
+                * <strong>လုပ်လက်စ မပြီးသေးတာ-</strong> အလုပ်တစ်ခု ပြီးမြောက်သွားတာ လုံးဝမဟုတ်ဘဲ လုပ်နေတုန်း မတော်တဆဖြစ်တာ၊ ရပ်လိုက်ရတာမျိုး ဖြစ်ရမယ်။
+            </div>
+
+            <div class="sub-heading">💡 ဥပမာဗျာ:</div>
+            <div class="example-box">
+                <span class="ko-text">프레스 기계를 <span class="hl-blue">작동시키다가</span> 손을 다칠 뻔했어요.</span>
+                <span class="my-text">"ဖိစက်ကို မောင်းနှင်နေတုန်းတန်းလန်းမှာ လက်ထိခိုက်ဒဏ်ရာရလုနီးပါး ဖြစ်ခဲ့တယ်။" (စက်မောင်းတာ မပြီးသေးပဲ လက်ပြားတော့မလို့)</span>
+            </div>
+            <div class="example-box">
+                <span class="ko-text">밥을 <span class="hl-blue">먹다가</span> 전화를 받았어요.</span>
+                <span class="my-text">"ထမင်းစားနေတုန်းတန်းလန်းမှာ ဖုန်းဝင်လာလို့ ကိုင်လိုက်တယ်။" (စားနေရင်း ရည်းစားဆီကဖုန်းလာလို့ စားတာခဏရပ်ပြီး ဖုန်းကိုင်တာ)</span>
+            </div>
+        </div>
+
+        <!-- 2. V-았/었다가 -->
+        <div class="grammar-card">
+            <div class="card-title">
+                <span class="hl-red">🍁 ၂။ V-았/었다가</span> (အပြည့်အဝပြီးပြတ်ပြီးမှ ဆန့်ကျင်ဘက်သို့ ပြောင်းပြန်ဖြစ်သွားခြင်း)
+            </div>
+            
+            <div class="desc-text">
+                > <strong>အဓိပ္ပာယ်:</strong> ဒီကောင်ကျ ရှေ့က လုပ်ဆောင်ချက်တစ်ခုလုံး ၁၀၀% လုံးဝ ပြီးစီးသွားခဲ့ပြီ။ ပြီးသွားပြီးမှ အဲဒီရလဒ်ကနေ ၁၈၀ ဒီဂရီ ဆန့်ကျင်ဘက် လုပ်ရပ်အဖြစ် ပြောင်းပြန် ပြန်ဖြစ်သွားတာကို ပြောတဲ့အခါ သုံးတယ်။
+            </div>
+            
+            <div class="desc-text" style="color: #dc2626;">
+                > <strong>မြန်မာလို အလွယ်မှတ်ရင်:</strong> "~ပြီးမှ (ဆန့်ကျင်ဘက် ပြန်လုပ်တယ်)"
+            </div>
+
+            <div class="sub-heading">✨ ပေါင်းစပ်ပုံ:</div>
+            <div class="desc-text">
+                * ကြိယာအဆုံးသတ် သရပေါ်မူတည်ပြီး အတိတ်သဒ္ဒါ <span class="hl-red">-았/었다가</span> ပေါင်း။<br>
+                &nbsp;&nbsp;• 사다 → <span class="hl-red">샀다가</span> (ဝယ်ပြီးမှ)<br>
+                &nbsp;&nbsp;• 켜다 → <span class="hl-red">켰다가</span> (ဖွင့်ပြီးမှ)<br>
+                &nbsp;&nbsp;• 타다 → <span class="hl-red">탔다가</span> (စီးပြီးမှ)
+            </div>
+
+            <div class="sub-heading">📌 မဖြစ်မနေ သိရမယ့် အချက်က :</div>
+            <div class="desc-text">
+                * <strong>ရှေ့အလုပ် ပြီးပြတ်ရမယ်:</strong> ရှေ့ကအလုပ်က လုပ်လက်စ မဟုတ်ဘူး၊ အပြည့်အဝ ပြီးသွားပြီ။<br>
+                * <strong>ဆန့်ကျင်ဘက် လုပ်ရပ်များသာ တွဲသုံးလေ့ရှိ (အရမ်းအရေးကြီးတယ်နော်):</strong><br>
+                &nbsp;&nbsp;• ဝယ်ပြီးမှ ပြန်လဲသည်/ပြန်ဖျက်သည်: 샀다가 환불하다 / 바꾸다<br>
+                &nbsp;&nbsp;• မီးဖွင့်ပြီးမှ ပြန်ပိတ်သည်: 켰다가 끄다<br>
+                &nbsp;&nbsp;• ကားစီးပြီးမှ ပြန်ဆင်းသည်: 탔다가 내리다<br>
+                &nbsp;&nbsp;• အဝတ်ဝတ်ပြီးမှ ပြန်ချွတ်သည်: 입었다가 벗다<br>
+                &nbsp;&nbsp;• သွားပြီးမှ ပြန်လာသည်: 갔다가 오다
+            </div>
+
+            <div class="sub-heading">💡 ဥပမာများ:</div>
+            <div class="example-box">
+                <span class="ko-text">바지를 <span class="hl-red">샀다가</span> 사이즈가 작아서 환불했어요.</span>
+                <span class="my-text">"ဘောင်းဘီကို ဝယ်ပြီးသွားမှ ဆိုဒ်သေးနေလို့ ပိုက်ဆံပြန်အမ်းခိုင်းလိုက်တယ်။" (ဝယ်တာ ပြီးသွားပြီးမှ ဆန့်ကျင်ဘက် ပြန်အမ်းခိုင်းတာ)</span>
+            </div>
+            <div class="example-box">
+                <span class="ko-text">불을 <span class="hl-red">켰다가</span> 너무 밝아서 다시 껐어요.</span>
+                <span class="my-text">"မီးကို ဖွင့်ပြီးသွားမှ အရမ်းလင်းနေလို့ ပြန်ပိတ်လိုက်တယ်။" (မီးဖွင့်တာ ပြီးပြီးမှ ဆန့်ကျင်ဘက် ပြန်ပိတ်တာ)</span>
+            </div>
+        </div>
+
+        <!-- Comparison Table Card -->
+        <div class="grammar-card">
+            <div class="card-title">
+                <span class="hl-yellow" style="color:#000;">🍁 မျက်စိထဲ တစ်ခါတည်း ကွဲသွားအောင် နှိုင်းယှဉ်ချက်</span>
+            </div>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>ခွဲခြားချက်</th>
+                        <th>-다가 <span style="font-size: 10px; color: #facc15;">(လုပ်လက်စ မပြီးသေး)</span></th>
+                        <th>-았/었다가 <span style="font-size: 10px; color: #facc15;">(ပြီးပြီးမှ ဆန့်ကျင်ဘက်)</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>အခြေအနေ</strong></td>
+                        <td>ရှေ့အလုပ် လုပ်နေဆဲတန်းလန်း (မပြီးသေးပါ)</td>
+                        <td>ရှေ့အလုပ် အပြည့်အဝ ပြီးပြတ်သွားပြီ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>နောက်ကလုပ်ရပ်</strong></td>
+                        <td>အလယ်ခေါင်မှာ ကြားဖြတ်ရပ်တန့်/မတော်တဆဖြစ်</td>
+                        <td>ရှေ့လုပ်ရပ်ရဲ့ ဆန့်ကျင်ဘက်/ပြောင်းပြန် လုပ်ရပ်ဖြစ်</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ဥပမာ နှိုင်းယှဉ်ချက်</strong></td>
+                        <td>자다가 깼어요.<br>(အိပ်နေတုန်း ကြားထဲ လန့်နိုးလာတာ)</td>
+                        <td>잤다가 일어났어요.<br>(အိပ်ရေးဝအောင် အိပ်ပြီးမှ နိုးထလာတာ)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ဖိနပ်ဝယ်တာကို ဥပမာ</strong></td>
+                        <td>신발을 사러 가다가 돌아왔어요.<br>(ဝယ်ဖို့သွားနေတုန်း လမ်းမှာ ပြန်လှည့်လာတာ)</td>
+                        <td>신발을 샀다가 바꿨어요.<br>(ဖိနပ်ကို ဝယ်ပြီးသွားမှ တခြားဆိုဒ်နဲ့ ပြန်လဲလိုက်တာ)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer with Logo -->
+        <div class="card-footer">
+            <img src="https://i.imgur.com/WA5hd3D.jpeg" alt="Gxoker Logo" class="footer-logo">
+            <span class="brand-text">Created By Gxoker</span>
+            <img src="https://i.imgur.com/WA5hd3D.jpeg" alt="Gxoker Logo" class="footer-logo">
+        </div>
+    </div>
+</div>
+
+</body>
+  </html>
+              
